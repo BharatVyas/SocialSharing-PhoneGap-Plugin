@@ -8,6 +8,13 @@
 @property (retain) NSString * tempStoredFile;
 @property (retain) CDVInvokedUrlCommand * command;
 
+@property (nonatomic, strong) IBOutlet UITextField *loginField;
+@property (nonatomic, strong) IBOutlet UITextField *passwordField;
+@property (nonatomic, strong) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) IBOutlet UIButton *loginWithDashlaneButton;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) IBOutlet UIView *maskView;
+
 - (void)available:(CDVInvokedUrlCommand*)command;
 - (void)setIPadPopupCoordinates:(CDVInvokedUrlCommand*)command;
 - (void)share:(CDVInvokedUrlCommand*)command;
@@ -16,6 +23,7 @@
 - (void)shareVia:(CDVInvokedUrlCommand*)command;
 - (void)shareViaTwitter:(CDVInvokedUrlCommand*)command;
 - (void)shareViaFacebook:(CDVInvokedUrlCommand*)command;
+- (void)shareViaDashlane:(CDVInvokedUrlCommand*)command;
 - (void)shareViaFacebookWithPasteMessageHint:(CDVInvokedUrlCommand*)command;
 - (void)shareViaWhatsApp:(CDVInvokedUrlCommand*)command;
 - (void)shareViaSMS:(CDVInvokedUrlCommand*)command;
