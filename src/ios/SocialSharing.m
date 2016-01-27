@@ -150,46 +150,27 @@
   [self shareViaInternal:command type:SLServiceTypeFacebook];
 }
 - (void)shareViaDashlane:(CDVInvokedUrlCommand*)command {
+    NSString *appName = @"travelplusstyle";
+    NSString *serviceName = @"travelplusstyle.com";
+    DashlaneExtensionRequestHelper *helper = [[DashlaneExtensionRequestHelper alloc] initWithAppName:'vertafore'];
+            NSDictionary *credentialDetail = @{DASHLANE_EXTENSION_STORE_REQUEST_LOGIN_KEY: 'vsso@grr.la',
+                                               DASHLANE_EXTENSION_STORE_REQUEST_PASSWORD_KEY: '$Abc123abc',
+                                               DASHLANE_EXTENSION_STORE_REQUEST_SERVICE_NAME_OR_URL_KEY: serviceName};
 
-    NSString *title = @"";
-    NSString *message = @"Would you like to save your credential in Dashlane?";
-    NSString *yesAction = @"Yes";
-    NSString *noAction = @"No, thanks";
-
-    UIAlertController *saveCredentialController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-
-    [saveCredentialController addAction:[UIAlertAction actionWithTitle:noAction style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [self startLoading];
-    }]];
-
-    [saveCredentialController addAction:[UIAlertAction actionWithTitle:yesAction style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-
-        NSString *appName = @"vertafore";
-        NSString *serviceName = @"vertafore.com";
-
-        DashlaneExtensionRequestHelper *helper = [[DashlaneExtensionRequestHelper alloc] initWithAppName:appName];
-
-        NSDictionary *credentialDetail = @{DASHLANE_EXTENSION_STORE_REQUEST_LOGIN_KEY: self.loginField.text,
-                                           DASHLANE_EXTENSION_STORE_REQUEST_PASSWORD_KEY: self.passwordField.text,
-                                           DASHLANE_EXTENSION_STORE_REQUEST_SERVICE_NAME_OR_URL_KEY: serviceName};
-
-        [helper requestStoreLoginAndPassword:credentialDetail withCompletionBlock:^(NSDictionary *dictionary, NSError *error) {
+[helper requestStoreLoginAndPassword:credentialDetail withCompletionBlock:^(NSDictionary *dictionary, NSError *error) {
             if (error != nil) {
                 UIAlertController *errorController = [UIAlertController alertControllerWithTitle:@"Failed to Save Credential" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
 
                 [errorController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                    [self startLoading];
+                    //[self startLoading];
                 }]];
 
-                [self presentViewController:errorController animated:YES completion:nil];
+               // [self presentViewController:errorController animated:YES completion:nil];
             }
             else {
-                [self startLoading];
+               // [self startLoading];
             }
         }];
-    }]];
-
-    [self presentViewController:saveCredentialController animated:YES completion:nil];
 }
 
 - (void)shareViaFacebookWithPasteMessageHint:(CDVInvokedUrlCommand*)command {
