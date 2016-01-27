@@ -163,6 +163,7 @@
     }]];
 
     [saveCredentialController addAction:[UIAlertAction actionWithTitle:yesAction style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
         NSString *appName = @"vertafore";
         NSString *serviceName = @"vertafore.com";
 
