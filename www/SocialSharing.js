@@ -1,4 +1,4 @@
-﻿cordova.define("cordova-plugin-x-socialsharing.SocialSharing", function(require, exports, module) { var cordova = require('cordova');
+﻿var cordova = require('cordova');
 
 function SocialSharing() {
 }
@@ -129,5 +129,3 @@ SocialSharing.install = function () {
 };
 
 cordova.addConstructor(SocialSharing.install);
-
-});
