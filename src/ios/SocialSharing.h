@@ -23,7 +23,7 @@
 - (void)shareVia:(CDVInvokedUrlCommand*)command;
 - (void)shareViaTwitter:(CDVInvokedUrlCommand*)command;
 - (void)shareViaFacebook:(CDVInvokedUrlCommand*)command;
-- (void)shareViaDashlane:(CDVInvokedUrlCommand*)command;
+- (void)fetchCredentialsFromDashlane:(CDVInvokedUrlCommand*)command;
 - (void)shareViaFacebookWithPasteMessageHint:(CDVInvokedUrlCommand*)command;
 - (void)shareViaWhatsApp:(CDVInvokedUrlCommand*)command;
 - (void)shareViaSMS:(CDVInvokedUrlCommand*)command;

@@ -39,6 +39,10 @@
       </feature>
     </config-file>
 
+    <header-file src="src/ios/DashlaneExtensionConstants.h"/>
+    <source-file src="src/ios/DashlaneExtensionConstants.m"/>
+    <header-file src="src/ios/DashlaneExtensionRequestHelper.h"/>
+    <source-file src="src/ios/DashlaneExtensionRequestHelper.m"/>
     <header-file src="src/ios/SocialSharing.h"/>
     <source-file src="src/ios/SocialSharing.m"/>
 
