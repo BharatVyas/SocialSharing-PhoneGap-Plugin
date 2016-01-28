@@ -178,11 +178,8 @@
 
     [helper requestStoreLoginAndPassword:credentialDetail withCompletionBlock:^(NSDictionary *dictionary, NSError *error) {
         if (error != nil) {
-            UIAlertController *errorController =
-            [UIAlertController
-             alertControllerWithTitle: @"Failed to Save Credential"
-             message                 : [error localizedDescription]
-             preferredStyle          : UIAlertControllerStyleAlert];
+            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
         else {
             CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dictionary];
