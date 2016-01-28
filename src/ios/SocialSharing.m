@@ -149,6 +149,7 @@
 - (void)shareViaFacebook:(CDVInvokedUrlCommand*)command {
   [self shareViaInternal:command type:SLServiceTypeFacebook];
 }
+
 - (void)fetchCredentialsFromDashlane:(CDVInvokedUrlCommand*)command {
     DashlaneExtensionRequestHelper *helper = [[DashlaneExtensionRequestHelper alloc] initWithAppName:@"travelplusstyle"];
     [helper requestLoginAndPasswordWithCompletionBlock:^(NSDictionary *response, NSError *error) {
