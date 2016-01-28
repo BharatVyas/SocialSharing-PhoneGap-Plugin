@@ -150,6 +150,12 @@
   [self shareViaInternal:command type:SLServiceTypeFacebook];
 }
 
+- (void)isDashlaneAppExtensionAvailable:(CDVInvokedUrlCommand*)command {
+    bool result = [DashlaneExtensionRequestHelper isDashlaneAppExtensionAvailable];
+    CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:result];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)fetchCredentialsFromDashlane:(CDVInvokedUrlCommand*)command {
     DashlaneExtensionRequestHelper *helper = [[DashlaneExtensionRequestHelper alloc] initWithAppName:@"vertafore"];
     [helper requestLoginAndPasswordWithCompletionBlock:^(NSDictionary *response, NSError *error) {

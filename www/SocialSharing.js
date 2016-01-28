@@ -1,4 +1,4 @@
-﻿var cordova = require('cordova');
+﻿cordova.define("cordova-plugin-x-socialsharing.SocialSharing", function(require, exports, module) { var cordova = require('cordova');
 
 function SocialSharing() {
 }
@@ -54,6 +54,10 @@ SocialSharing.prototype.saveCredentialsToDashlane = function (username, password
 SocialSharing.prototype.shareViaFacebookWithPasteMessageHint = function (message, fileOrFileArray, url, pasteMessageHint, successCallback, errorCallback) {
   pasteMessageHint = pasteMessageHint || "If you like you can paste a message from your clipboard";
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaFacebookWithPasteMessageHint"), "SocialSharing", "shareViaFacebookWithPasteMessageHint", [message, null, this._asArray(fileOrFileArray), url, pasteMessageHint]);
+};
+
+SocialSharing.prototype.isDashlaneAppExtensionAvailable = function (successCallback, errorCallback) {
+  cordova.exec(successCallback, this._getErrorCallback(errorCallback, "isDashlaneAppExtensionAvailable"), "SocialSharing", "isDashlaneAppExtensionAvailable", []);
 };
 
 SocialSharing.prototype.shareViaWhatsApp = function (message, fileOrFileArray, url, successCallback, errorCallback) {
@@ -125,3 +129,5 @@ SocialSharing.install = function () {
 };
 
 cordova.addConstructor(SocialSharing.install);
+
+});

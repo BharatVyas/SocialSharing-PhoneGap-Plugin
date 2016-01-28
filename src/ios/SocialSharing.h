@@ -32,5 +32,6 @@
 
 - (void)saveToPhotoAlbum:(CDVInvokedUrlCommand*)command;
 - (void)saveCredentialsToDashlane:(CDVInvokedUrlCommand*)command;
+- (void)isDashlaneAppExtensionAvailable:(CDVInvokedUrlCommand*)command;
 
 @end
