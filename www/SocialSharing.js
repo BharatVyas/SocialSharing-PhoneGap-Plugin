@@ -42,9 +42,11 @@ SocialSharing.prototype.shareViaTwitter = function (message, file /* multiple no
 SocialSharing.prototype.shareViaFacebook = function (message, fileOrFileArray, url, successCallback, errorCallback) {
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaFacebook"), "SocialSharing", "shareViaFacebook", [message, null, this._asArray(fileOrFileArray), url]);
 };
+
 SocialSharing.prototype.fetchCredentialsFromDashlane = function (successCallback, errorCallback) {
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "fetchCredentialsFromDashlane"), "SocialSharing", "fetchCredentialsFromDashlane", []);
 };
+
 SocialSharing.prototype.saveCredentialsToDashlane = function (username, password, successCallback, errorCallback) {
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "saveCredentialsToDashlane"), "SocialSharing", "saveCredentialsToDashlane", [username, password]);
 };
