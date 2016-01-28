@@ -31,5 +31,6 @@
 - (void)shareViaInstagram:(CDVInvokedUrlCommand*)command;
 
 - (void)saveToPhotoAlbum:(CDVInvokedUrlCommand*)command;
+- (void)saveCredentialsToDashlane:(CDVInvokedUrlCommand*)command;
 
 @end

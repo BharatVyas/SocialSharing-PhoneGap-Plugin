@@ -45,6 +45,9 @@ SocialSharing.prototype.shareViaFacebook = function (message, fileOrFileArray, u
 SocialSharing.prototype.fetchCredentialsFromDashlane = function (successCallback, errorCallback) {
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "fetchCredentialsFromDashlane"), "SocialSharing", "fetchCredentialsFromDashlane", []);
 };
+SocialSharing.prototype.saveCredentialsToDashlane = function (username, password, successCallback, errorCallback) {
+  cordova.exec(successCallback, this._getErrorCallback(errorCallback, "saveCredentialsToDashlane"), "SocialSharing", "saveCredentialsToDashlane", [username, password]);
+};
 
 SocialSharing.prototype.shareViaFacebookWithPasteMessageHint = function (message, fileOrFileArray, url, pasteMessageHint, successCallback, errorCallback) {
   pasteMessageHint = pasteMessageHint || "If you like you can paste a message from your clipboard";
